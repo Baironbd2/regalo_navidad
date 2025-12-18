@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz navidad 🎄</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+</head>
+<body>
+  <header class="top-nav">
+    <h1>¡Feliz navidad Cuchicita!</h1>
+    <button class="btn-logout" onclick="logout()">Salir</button>
+  </header>
+  <svg id="stage" viewBox="0 0 900 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <clipPath id="cp1">
+      <rect width="390" height="300" rx="15"/>
+    </clipPath>
+    
+    <g class="r1 row">
+      <image href="{{ url_for('static', filename='img/cuchi(1).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(2).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(3).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(4).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(5).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(6).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(7).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(8).jpeg') }}" />
+    </g>
+  
+    <g class="r2 row">
+      <image href="{{ url_for('static', filename='img/cuchi(9).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(10).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(11).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(12).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(13).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(14).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(15).jpeg') }}" />
+      <image href="{{ url_for('static', filename='img/cuchi(16).jpeg') }}" />
+    </g>
+  </svg>
+   
+  <audio id="bg-music" loop>
+    <source src="{{ url_for('static', filename='sound/Te_amo.mp3') }}" type="audio/mpeg">
+    Tu navegador no soporta el elemento audio.
+  </audio>
+
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap/dist/Observer.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

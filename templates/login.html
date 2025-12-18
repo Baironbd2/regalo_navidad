@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+
+</head>
+<body>
+    
+    <div class="decoration blob-1"></div>
+    <div class="decoration blob-2"></div>
+
+    <div class="wrapper">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Hola cuchicita 🎁</h1>
+                <p>Ingresa tus credenciales para continuar 🤫</p>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="flash-message">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="/login">
+                <div class="form-group">
+                    <label for="username">Usuario 🦉</label>
+                    <input type="text" id="username" name="username" class="form-input" placeholder="Cuchi" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña 😌</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    Entrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
